@@ -19,7 +19,9 @@ namespace winelegend.service.Models
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Student> Students { get; set; }
-
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<Brand> Brands { get; set; }
         public DbSet<Role> Roles { get; set; }
     }
 }

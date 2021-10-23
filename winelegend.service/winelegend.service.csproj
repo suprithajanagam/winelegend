@@ -278,6 +278,10 @@
     <Compile Include="Migrations\202110230520443_rolenamealtermigration.designer.cs">
       <DependentUpon>202110230520443_rolenamealtermigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110231325488_categorymigration.cs" />
+    <Compile Include="Migrations\202110231325488_categorymigration.Designer.cs">
+      <DependentUpon>202110231325488_categorymigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WineLegendContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -387,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110230520443_rolenamealtermigration.resx">
       <DependentUpon>202110230520443_rolenamealtermigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110231325488_categorymigration.resx">
+      <DependentUpon>202110231325488_categorymigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
