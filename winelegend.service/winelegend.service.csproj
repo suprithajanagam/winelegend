@@ -285,8 +285,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WineLegendContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositary\CategoryRepositary.cs" />
     <Compile Include="Repositary\RoleRepositary.cs" />
     <Compile Include="Repositary\StudentRepositary.cs" />
+    <Compile Include="services\ICategoryService.cs" />
     <Compile Include="services\IRoleService.cs" />
     <Compile Include="services\IStudentService.cs" />
   </ItemGroup>
