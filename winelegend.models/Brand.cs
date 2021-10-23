@@ -13,7 +13,7 @@ namespace winelegend.models
         [Key]
 
         public Guid BrandId { get; set; }
-        [ForeignKey("SubCategory")]
+        //[ForeignKey("SubCategory")]
         public Guid SubCategoryId { get; set; }
         public string BrandName { get; set; }
         public string Description { get; set; }

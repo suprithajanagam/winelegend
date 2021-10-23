@@ -10,7 +10,7 @@ namespace winelegend.models
 {
     public class SubCategory
     {
-        [ForeignKey("Category")]
+       // [ForeignKey("Category")]
         public Guid CategoryId { get; set; }
         [Key]
         public Guid SubCategoryId { get; set; }
