@@ -11,6 +11,7 @@ namespace winelegend.models
     public class Brand
     {
         [Key]
+
         public Guid BrandId { get; set; }
         [ForeignKey("SubCategory")]
         public Guid SubCategoryId { get; set; }
