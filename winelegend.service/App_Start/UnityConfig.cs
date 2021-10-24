@@ -21,6 +21,7 @@ namespace winelegend.service
             container.RegisterType<ICategoryService, CategoryRepositary>();
             container.RegisterType<ISubCategoryService, SubCategoryRepositary>();
             container.RegisterType<IBrandService, BrandRepositary>();
+            container.RegisterType<IUserService, UsersRepositary>();
             
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

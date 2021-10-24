@@ -23,5 +23,10 @@ namespace winelegend.service.Models
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Role> Roles { get; set; }
+
+        public  DbSet<Users> Users { get; set; }
+
+        public DbSet<Addresses> Addresses { get; set; }
+        public DbSet<PasswordsHistory> PasswordsHistories { get; set; }
     }
 }
