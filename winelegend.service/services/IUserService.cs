@@ -15,5 +15,6 @@ namespace winelegend.service.services
         void Update(Guid id, Users users);
         void Delete(Guid id);
 
+        Users AuthenticateUser(string username, string password);
     }
 }
