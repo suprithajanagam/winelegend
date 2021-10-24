@@ -11,7 +11,7 @@ namespace winelegend.service.services
     {
          void CreateRole(Role role);
          List<winelegend.models.Role> GetAllRoles();
-        winelegend.models.Role RoleById(Guid id, winelegend.models.Role role);
+        winelegend.models.Role RoleById(Guid id);
         void UpdateRole(Guid id,Role role);
         void DeleteRole(Guid id);
     }
