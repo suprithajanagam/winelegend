@@ -107,6 +107,7 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.19.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.19\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Swagger.Net, Version=8.3.47.101, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swagger-Net.8.3.47.101\lib\net45\Swagger.Net.dll</HintPath>
     </Reference>
@@ -258,6 +259,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -290,6 +292,38 @@
     <Compile Include="Migrations\202110240344027_brandmigration.Designer.cs">
       <DependentUpon>202110240344027_brandmigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110240422534_usermodification.cs" />
+    <Compile Include="Migrations\202110240422534_usermodification.Designer.cs">
+      <DependentUpon>202110240422534_usermodification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110240424491_usermodification1.cs" />
+    <Compile Include="Migrations\202110240424491_usermodification1.Designer.cs">
+      <DependentUpon>202110240424491_usermodification1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110240425490_usermodification2.cs" />
+    <Compile Include="Migrations\202110240425490_usermodification2.Designer.cs">
+      <DependentUpon>202110240425490_usermodification2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110240426338_usersmodification.cs" />
+    <Compile Include="Migrations\202110240426338_usersmodification.Designer.cs">
+      <DependentUpon>202110240426338_usersmodification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110240428404_usersmodificationbdset.cs" />
+    <Compile Include="Migrations\202110240428404_usersmodificationbdset.Designer.cs">
+      <DependentUpon>202110240428404_usersmodificationbdset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110240437066_useraddress.cs" />
+    <Compile Include="Migrations\202110240437066_useraddress.Designer.cs">
+      <DependentUpon>202110240437066_useraddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110240448386_passwordhistory.cs" />
+    <Compile Include="Migrations\202110240448386_passwordhistory.Designer.cs">
+      <DependentUpon>202110240448386_passwordhistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110240731228_usersmodification1.cs" />
+    <Compile Include="Migrations\202110240731228_usersmodification1.Designer.cs">
+      <DependentUpon>202110240731228_usersmodification1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WineLegendContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -298,11 +332,13 @@
     <Compile Include="Repositary\RoleRepositary.cs" />
     <Compile Include="Repositary\StudentRepositary.cs" />
     <Compile Include="Repositary\SubCategoryRepositary.cs" />
+    <Compile Include="Repositary\UsersRepositary.cs" />
     <Compile Include="services\IBrandService.cs" />
     <Compile Include="services\ICategoryService.cs" />
     <Compile Include="services\IRoleService.cs" />
     <Compile Include="services\IStudentService.cs" />
     <Compile Include="services\ISubCategoryService.cs" />
+    <Compile Include="services\IUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -414,6 +450,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110240344027_brandmigration.resx">
       <DependentUpon>202110240344027_brandmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240422534_usermodification.resx">
+      <DependentUpon>202110240422534_usermodification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240424491_usermodification1.resx">
+      <DependentUpon>202110240424491_usermodification1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240425490_usermodification2.resx">
+      <DependentUpon>202110240425490_usermodification2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240426338_usersmodification.resx">
+      <DependentUpon>202110240426338_usersmodification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240428404_usersmodificationbdset.resx">
+      <DependentUpon>202110240428404_usersmodificationbdset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240437066_useraddress.resx">
+      <DependentUpon>202110240437066_useraddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240448386_passwordhistory.resx">
+      <DependentUpon>202110240448386_passwordhistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110240731228_usersmodification1.resx">
+      <DependentUpon>202110240731228_usersmodification1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
