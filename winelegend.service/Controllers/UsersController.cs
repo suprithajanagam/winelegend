@@ -22,7 +22,7 @@ namespace winelegend.service.Controllers
         {
             this._userservice = userservice;
         }
-       
+
 
         // GET: api/Users
         public List<Users> GetUsers()
@@ -42,6 +42,20 @@ namespace winelegend.service.Controllers
 
             return Ok(users);
         }
+        [Route("api/Users/AuthenticateUser")]
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult AuthenticateUser(string username, string password)
+        {
+            Users users = _userservice.AuthenticateUser(username, password);
+
+            if (users == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(users);
+        }
+
 
         // PUT: api/Users/5
         [ResponseType(typeof(void))]
@@ -57,7 +71,7 @@ namespace winelegend.service.Controllers
                 return BadRequest();
             }
 
-            
+
 
             try
             {
@@ -87,7 +101,7 @@ namespace winelegend.service.Controllers
                 return BadRequest(ModelState);
             }
 
-           
+
 
             try
             {
@@ -112,7 +126,7 @@ namespace winelegend.service.Controllers
         [ResponseType(typeof(Users))]
         public IHttpActionResult DeleteUsers(Guid id)
         {
-          
+
             if (id == null)
             {
                 return NotFound();
@@ -126,13 +140,13 @@ namespace winelegend.service.Controllers
 
         private bool UsersExists(Guid id)
         {
-          
-                var user = _userservice.GetById(id);
 
-                if (user != null)
-                    return true;
-                else
-                    return false;
-            }
+            var user = _userservice.GetById(id);
+
+            if (user != null)
+                return true;
+            else
+                return false;
         }
     }
+}

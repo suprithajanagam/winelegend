@@ -428,6 +428,10 @@
       <Project>{1A0AC2BF-2144-4029-AD24-A9EA0389D05E}</Project>
       <Name>winelegend.models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\winelegend.passwordmanager\winelegend.passwordmanager.csproj">
+      <Project>{D9C15065-8EF4-4D62-B36B-9B7FF21E378A}</Project>
+      <Name>winelegend.passwordmanager</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202110230432173_initalmigration.resx">
