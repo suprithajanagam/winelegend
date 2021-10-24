@@ -9,7 +9,7 @@ namespace winelegend.service.Models
 {
     public class WineLegendContext : DbContext
     {
-        public WineLegendContext() : base("WineLegendContext") 
+        public WineLegendContext() : base("WineLegendContext")
         {
             Database.SetInitializer<WineLegendContext>(null); ;
         }
@@ -17,6 +17,8 @@ namespace winelegend.service.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+          //  modelBuilder.Entity<Users>().HasIndex(u => u.Email)   .IsUnique();
         }
         public DbSet<Student> Students { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -24,9 +26,11 @@ namespace winelegend.service.Models
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Role> Roles { get; set; }
 
-        public  DbSet<Users> Users { get; set; }
+        public DbSet<Users> Users { get; set; }
 
         public DbSet<Addresses> Addresses { get; set; }
         public DbSet<PasswordsHistory> PasswordsHistories { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
     }
 }
