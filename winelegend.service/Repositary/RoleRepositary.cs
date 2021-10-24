@@ -49,10 +49,7 @@ namespace winelegend.service.Repositary
             return _role;
         }
 
-        public Role RoleById(Guid id, Role role)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public void UpdateRole(Guid id, Role role)
         {
