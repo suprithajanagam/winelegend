@@ -10,8 +10,8 @@ namespace winelegend.service.services
    public interface ICategoryService
     {
         void CreateCategory(Category category);
-        Category GetAllCategories();
-        List<Category> GetCategoryId(Guid id);
+        List<Category> GetAllCategories();
+        Category GetCategoryId(Guid id);
         void UpdateCategory(Guid id, Category category);
         void DeleteCategory(Guid id);
 
