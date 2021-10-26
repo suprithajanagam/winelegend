@@ -1,0 +1,32 @@
+﻿@model List<winelegend.models.Student>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">StudentID</th>
+            <th scope="col">StudentName</th>
+            <th scope="col">DateOfBirth</th>
+            <th scope="col">Height</th>
+            <th scope="col">Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.StudentID</th>
+                <td>@item.StudentName</td>
+                <td>@item.DateOfBirth</td>
+                <td>@item.Height</td>
+                <td>@item.Weight</td>
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>

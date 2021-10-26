@@ -28,19 +28,8 @@ namespace winelegend.service.Controllers
         {
             IList<Student> students = null;
 
-            using (var ctx = new WineLegendContext())
-            {
-                students = ctx.Students.Select(s => new Student()
-                {
-                    StudentID = s.StudentID,
-                    StudentName = s.StudentName,
-                    DateOfBirth = s.DateOfBirth,
-                    Photo=s.Photo,
-                    Height=s.Height,
-                    Weight=s.Weight
-
-                }).ToList<Student>();
-            }
+            WineLegendContext context = new WineLegendContext();
+            students = context.Students.ToList();
 
             if (students.Count == 0)
             {
