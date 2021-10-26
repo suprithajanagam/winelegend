@@ -30,7 +30,10 @@ namespace winelegend.web.Repository
             throw new NotImplementedException();
         }
 
-        
+        internal static Task Add(Student student)
+        {
+            throw new NotImplementedException();
+        }
 
         public Student Get(Guid Id)
         { 
@@ -52,9 +55,14 @@ namespace winelegend.web.Repository
             return stdents;
         }
 
-        public void Save(Student student)
+        public async Task<bool> Save(Student student)
         {
-            throw new NotImplementedException();
+            var response = await client.PostAsJsonAsync("api/Students/", student);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Update(Guid Id, Student student)

@@ -49,5 +49,10 @@ namespace winelegend.web.Repository
         {
             throw new NotImplementedException();
         }
+
+        Student ICurrencyService.Get(Guid Id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

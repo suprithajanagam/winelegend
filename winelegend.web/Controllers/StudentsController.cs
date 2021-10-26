@@ -1,9 +1,12 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.Mvc;
 using winelegend.models;
 using winelegend.web.Repository;
@@ -25,14 +28,28 @@ namespace winelegend.web.Controllers
 
             return View(studentsList);
         }
-        [HttpPost]
-        [Route("api/Student/Create")]
-        public async Task CreateAsync([FromBody] Student student)
+        public ActionResult create()
         {
+            return View();
+        }
+        [HttpPost]
+        public async Task<ActionResult> create(Student student)
+        {
+            student.StudentID = Guid.NewGuid();
+            student.DateOfBirth = DateTime.Now;
+
             if (ModelState.IsValid)
             {
-                await StudentRepository.Add(student);
+                bool valid = await studentService.Save(student);
+                if (valid)
+                {
+                    return RedirectToAction("Index", "Students",  null);
+                }
             }
+            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+            
+            return View(student);
+
         }
 
     }

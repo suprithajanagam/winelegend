@@ -9,7 +9,7 @@ namespace winelegend.web.Services
 {
     public interface IStudentService
     {
-        void Save(Student student);
+       Task<bool> Save(Student student);
 
         void Delete(Guid Id);
 
