@@ -26,6 +26,7 @@ namespace winelegend.web
             container.RegisterType<ILanguageService, LanguageRepositary>();
             container.RegisterType<IRoleService, RoleRepositary>();
             container.RegisterType<ILanguageService, LanguageRepositary>();
+            container.RegisterType<ICurrencyService, CurrencyRepositary>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
