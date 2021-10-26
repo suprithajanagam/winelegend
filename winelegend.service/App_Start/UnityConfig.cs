@@ -3,6 +3,7 @@ using Unity;
 using Unity.WebApi;
 using winelegend.service.Repositary;
 using winelegend.service.services;
+using winelegend.service.Services;
 
 namespace winelegend.service
 {
@@ -22,7 +23,8 @@ namespace winelegend.service
             container.RegisterType<ISubCategoryService, SubCategoryRepositary>();
             container.RegisterType<IBrandService, BrandRepositary>();
             container.RegisterType<IUserService, UsersRepositary>();
-            
+            container.RegisterType<ICurrencyService, CurrencyRepositary>();
+            container.RegisterType<ILanguageService, LanguageRepositary>();
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

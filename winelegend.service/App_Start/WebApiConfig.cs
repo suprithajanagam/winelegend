@@ -19,6 +19,11 @@ namespace winelegend.service
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.Formatters.JsonFormatter.MediaTypeMappings.Add(new System.Net.Http.Formatting.RequestHeaderMapping("Accept",
+                              "application/json",
+                              StringComparison.InvariantCultureIgnoreCase,
+                              true,
+                              "application/json"));
         }
     }
 }
