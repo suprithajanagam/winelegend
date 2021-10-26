@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Windows.Documents;
 using winelegend.models;
 using winelegend.service.Models;
 using winelegend.service.services;
@@ -23,9 +24,30 @@ namespace winelegend.service.Controllers
             this._studentservice = studentService;
         }
         // GET: api/Students
-        public List<Student> GetStudents()
+        public IHttpActionResult GetStudents()
         {
-            return _studentservice.GetStudents();
+            IList<Student> students = null;
+
+            using (var ctx = new WineLegendContext())
+            {
+                students = ctx.Students.Select(s => new Student()
+                {
+                    StudentID = s.StudentID,
+                    StudentName = s.StudentName,
+                    DateOfBirth = s.DateOfBirth,
+                    Photo=s.Photo,
+                    Height=s.Height,
+                    Weight=s.Weight
+
+                }).ToList<Student>();
+            }
+
+            if (students.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(students);
         }
 
         // GET: api/Students/5
