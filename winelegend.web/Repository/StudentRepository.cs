@@ -65,9 +65,14 @@ namespace winelegend.web.Repository
             throw new NotImplementedException();
         }
 
-        public void Save(Student student)
+         public async Task<bool> Save(Student student)
         {
-            throw new NotImplementedException();
+             var response = await client.PostAsJsonAsync("api/Students/", student);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

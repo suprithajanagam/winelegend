@@ -92,6 +92,7 @@ namespace winelegend.service.Controllers
         [ResponseType(typeof(Student))]
         public IHttpActionResult PostStudent(Student student)
         {
+           // client.BaseAddress = new Uri("http://localhost:64189/api/student");
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
