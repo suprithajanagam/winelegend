@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using winelegend.models;
+using winelegend.web.Repository;
 using winelegend.web.Services;
 
 namespace winelegend.web.Controllers
@@ -20,6 +22,15 @@ namespace winelegend.web.Controllers
         {
             var roleLists = await roleService.Get();
             return View(roleLists);
+        }
+        [HttpPost]
+        [Route("api/Role/Create")]
+        public async Task CreateAsync([FromBody] Role student)
+        {
+            if (ModelState.IsValid)
+            {
+                await RoleRepositary.Add(student);
+            }
         }
     }
 }

@@ -7,8 +7,11 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.ModelBinding;
+using System.Web.Mvc;
 using winelegend.models;
 using winelegend.web.Services;
+using ModelState = System.Web.Mvc.ModelState;
 
 namespace winelegend.web.Repository
 {
@@ -30,7 +33,10 @@ namespace winelegend.web.Repository
             throw new NotImplementedException();
         }
 
-        
+        internal static Task Add(Student student)
+        {
+            throw new NotImplementedException();
+        }
 
         public Student Get(Guid Id)
         { 
@@ -52,12 +58,14 @@ namespace winelegend.web.Repository
             return stdents;
         }
 
-        public void Save(Student student)
+       
+          
+        public void Update(Guid Id, Student student)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Guid Id, Student student)
+        public void Save(Student student)
         {
             throw new NotImplementedException();
         }

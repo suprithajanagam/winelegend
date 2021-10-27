@@ -29,6 +29,11 @@ namespace winelegend.web.Repository
             throw new NotImplementedException();
         }
 
+        internal static Task Add(Role student)
+        {
+            throw new NotImplementedException();
+        }
+
         public Role Get(Guid id)
         {
             throw new NotImplementedException();
